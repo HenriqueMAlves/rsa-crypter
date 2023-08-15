@@ -1,5 +1,5 @@
 from typing import List
-from src.math_utils import Prime, MultiplicativeInverse
+from src.services.math_utils import Prime, MultiplicativeInverse
 
 
 
