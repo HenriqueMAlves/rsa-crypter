@@ -11,13 +11,13 @@
 # decoded = service.decode(coded)
 # print("+ message decoded: ", decoded)
 
-from src.interface.screen import GenericScreen
+from src.interface.generic_screen import GenericScreen
 
 
-screen: GenericScreen = GenericScreen()
+screen: GenericScreen = GenericScreen(width=800)
 
-input = screen.input()
-button = screen.button()
-label = screen.label()
+input = screen.input(row=0, column=0)
+button = screen.button(row=1, column=0)
+label = screen.label(row=2, column=0)
 
 screen.run()

@@ -1,10 +1,13 @@
 import tkinter as tk
 
+from src.interface.style import Style
+
 class GenericScreen():
     root = None
     width: int = 0
     height: int = 0
     title: str = ""
+    default_style: Style = Style()
 
     def __init__(
             self, 
@@ -38,11 +41,29 @@ class GenericScreen():
         '''
         print("clicked")
 
-    def input(self) -> tk.Entry:
-        return tk.Entry(self.root).grid(row=0, column=0, padx=10, pady=10)
+    def input(self, row: int, column: int, style: Style = default_style) -> tk.Entry:
+        return tk.Entry(self.root)\
+            .grid(
+                row = row, 
+                column = column, 
+                padx = style.pad_x, 
+                pady = style.pad_y
+            )
 
-    def button(self, text: str = "click", command: callable = generic_click) -> tk.Button:
-        return tk.Button(self.root, text=text, command=command).grid(row=1, column=0, padx=10, pady=10)
+    def button(self, row: int, column: int, text: str = "click", command: callable = generic_click, style: Style = default_style) -> tk.Button:
+        return tk.Button(self.root, text=text, command=command)\
+            .grid(
+                row=row, 
+                column=column, 
+                padx=style.pad_x, 
+                pady=style.pad_y
+            )
     
-    def label(self, text: str = "label") ->tk.Label:
-        return tk.Label(self.root, text=text).grid(row=2, column=0, padx=10, pady=10)
+    def label(self, row: int, column: int, text: str = "label", style: Style = default_style) ->tk.Label:
+        return tk.Label(self.root, text=text)\
+            .grid(
+                row=row, 
+                column=column, 
+                padx=style.pad_x, 
+                pady=style.pad_y
+            )
