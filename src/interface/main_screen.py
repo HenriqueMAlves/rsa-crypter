@@ -1,0 +1,22 @@
+
+from tkinter import Entry
+from src.interface.services.generic_screen import GenericScreen
+
+
+class mainScreen:
+    screen: GenericScreen=GenericScreen(width=800)
+
+    input: Entry
+    label: any
+    button: any
+
+    def button_click(self) -> None:
+        text=self.input.get()
+        self.label.config(text=text)
+
+    def run(self) -> None:
+        self.input=self.screen.input(row=0, column=0)
+        self.label=self.screen.label(row=2, column=0)
+        self.button=self.screen.button(row=1, column=0, command=self.button_click)
+
+        self.screen.run()
