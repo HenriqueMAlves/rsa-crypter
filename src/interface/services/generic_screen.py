@@ -3,22 +3,22 @@ import tkinter as tk
 from src.interface.services.style import Style
 
 class GenericScreen():
-    root = None
-    width: int = 0
-    height: int = 0
-    title: str = ""
-    default_style: Style = Style()
+    root=None
+    width: int=0
+    height: int=0
+    title: str=""
+    default_style: Style=Style()
 
     def __init__(
             self, 
-            width: int = 1200, 
-            height: int = 500,
-            title: str = "rsa code / decode"
+            width: int=1200, 
+            height: int=500,
+            title: str="rsa code / decode"
             ) -> None:
-        self.width = width
-        self.height = height
-        self.title = title
-        self.root = tk.Tk()
+        self.width=width
+        self.height=height
+        self.title=title
+        self.root=tk.Tk()
         self.root.title(self.title)
         self.root.geometry(f"{self.width}x{self.height}")
 
@@ -29,7 +29,7 @@ class GenericScreen():
         '''
         self.root.mainloop()
 
-    def resize(self, width_resize: bool = True, height_resize: bool = True) -> None:
+    def resize(self, width_resize: bool=True, height_resize: bool=True) -> None:
         '''
             Habilita / Desabilita o redimensionmento da janela
         '''
@@ -41,8 +41,8 @@ class GenericScreen():
         '''
         print("clicked")
 
-    def input(self, row: int, column: int, style: Style = default_style) -> tk.Entry:
-        entry = tk.Entry(self.root)
+    def input(self, row: int, column: int, style: Style=default_style) -> tk.Entry:
+        entry=tk.Entry(self.root)
         entry.grid(
             row=row,
             column=column,
@@ -51,8 +51,8 @@ class GenericScreen():
         )
         return entry
 
-    def button(self, row: int, column: int, text: str = "click", command: callable = generic_click, style: Style = default_style) -> tk.Button:
-        button = tk.Button(self.root, text=text, command=command)
+    def button(self, row: int, column: int, text: str="click", command: callable=generic_click, style: Style=default_style) -> tk.Button:
+        button=tk.Button(self.root, text=text, command=command)
         button.grid(
             row=row, 
             column=column, 
@@ -62,8 +62,8 @@ class GenericScreen():
 
         return button
     
-    def label(self, row: int, column: int, text: str = "label", style: Style = default_style) -> tk.Label:
-        label = tk.Label(self.root, text=text)
+    def label(self, row: int, column: int, text: str="label", style: Style=default_style) -> tk.Label:
+        label=tk.Label(self.root, text=text)
         label.grid(
             row=row, 
             column=column, 
