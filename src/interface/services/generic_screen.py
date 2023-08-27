@@ -49,6 +49,13 @@ class GenericScreen():
             padx=style.pad_x,
             pady=style.pad_y
         )
+        entry.config(
+            font=style.font,
+            borderwidth=style.border,
+            bg=style.bg,
+            fg=style.fg,
+            width=style.width,
+        )
         return entry
 
     def button(self, row: int, column: int, text: str="click", command: callable=generic_click, style: Style=default_style) -> tk.Button:

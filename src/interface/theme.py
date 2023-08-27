@@ -9,4 +9,9 @@ button_style.set_border(2)
 button_style.set_color(bg=Colors.CORAL, fg=Colors.GOLD)
 button_style.set_area(8, 1)
 
-
+# Input properties
+input_style=Style()
+input_style.set_font(Fonts.ARIAL, 12, FontStyles.ITALIC)
+input_style.set_border(2)
+input_style.set_color(bg=Colors.BLUE_LIGHT, fg=Colors.BLACK)
+input_style.set_area(width=20)
