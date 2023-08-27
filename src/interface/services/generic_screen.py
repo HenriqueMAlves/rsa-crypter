@@ -58,7 +58,8 @@ class GenericScreen():
             column=column,
             padx=style.pad_x,
             pady=style.pad_y,
-            columnspan=style.column_span
+            columnspan=style.column_span,
+            sticky=style.component_alignmet
         )
         entry.config(
             font=style.font,
@@ -76,7 +77,7 @@ class GenericScreen():
             column=column, 
             padx=style.pad_x, 
             pady=style.pad_y,
-            stick=style.button_alignmet,
+            stick=style.component_alignmet,
             columnspan=style.column_span
         )
         button.config(
@@ -97,7 +98,8 @@ class GenericScreen():
             column=column, 
             padx=style.pad_x, 
             pady=style.pad_y,
-            columnspan=style.column_span
+            columnspan=style.column_span,
+            sticky=style.component_alignmet
         )
         label.config(
             font=style.font,
@@ -142,7 +144,7 @@ class GenericScreen():
             pady=style.pad_y,
             row=row, 
             column=column,
-            sticky=style.button_alignmet,
+            sticky=style.component_alignmet,
             columnspan=style.column_span
         )
         dropdown.configure(

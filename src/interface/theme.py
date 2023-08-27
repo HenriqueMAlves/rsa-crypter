@@ -1,5 +1,5 @@
 
-from src.interface.services.utils import ButtonAlignment, Colors, FontStyles, Fonts, TextAlignment
+from src.interface.services.utils import ComponentAlignment, Colors, FontStyles, Fonts, TextAlignment
 from src.interface.services.style import Style
 
 # Button properties
@@ -9,7 +9,7 @@ button_convert_style.set_font(Fonts.ARIAL, 10, FontStyles.BOLD)
 button_convert_style.set_border(2)
 button_convert_style.set_color(bg=Colors.GRAY, fg=Colors.BLACK)
 button_convert_style.set_area(13, 1)
-button_convert_style.set_button_alignmet(ButtonAlignment.LEFT)
+button_convert_style.set_component_alignmet(ComponentAlignment.LEFT)
 
 # Button properties
 button_export_style=Style()
@@ -18,7 +18,7 @@ button_export_style.set_font(Fonts.ARIAL, 10, FontStyles.BOLD)
 button_export_style.set_border(2)
 button_export_style.set_color(bg=Colors.GRAY, fg=Colors.BLACK)
 button_export_style.set_area(13, 1)
-button_export_style.set_button_alignmet(ButtonAlignment.RIGHT)
+button_export_style.set_component_alignmet(ComponentAlignment.RIGHT)
 
 # Dropdown properties
 dropdown_style=Style()
@@ -48,6 +48,7 @@ title_style.set_font(Fonts.ARIAL, 20, '')
 title_style.set_border(2)
 title_style.set_color(bg=Colors.SILVER, fg=Colors.BLACK)
 title_style.set_area(width=10)
+title_style.set_component_alignmet(ComponentAlignment.LEFT)
 
 # Label properties
 label_response_style=Style()
