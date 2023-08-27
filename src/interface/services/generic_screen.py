@@ -1,6 +1,7 @@
 import tkinter as tk
 
 from src.interface.services.style import Style
+from src.interface.theme import space_style
 
 class GenericScreen():
     root=None
@@ -95,3 +96,26 @@ class GenericScreen():
         )
 
         return label
+    
+    def space(self, row: int, column: int) -> tk.Label:
+        '''
+            Usado como um limitador do tamanho de cada coluna
+            para manter o mesmo espaço mesmo que os componentes 
+            da coluna sejam menores
+        '''
+
+        space=tk.Label(self.root, text="")
+        space.grid(
+            row=row, 
+            column=column, 
+            padx=space_style.pad_x, 
+            pady=space_style.pad_y
+        )
+        space.config(
+            font=space_style.font,
+            bg='white',
+            width=space_style.width,
+            height=space_style.height
+        )
+
+        return space

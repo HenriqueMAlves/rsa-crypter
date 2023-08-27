@@ -1,3 +1,4 @@
+from src.interface.services.utils import Colors
 
 
 class Style:
@@ -18,7 +19,7 @@ class Style:
         self.pad_x=pad_x
         self.pad_y=pad_y
 
-    def set_color(self, bg: str, fg: str=None) -> None:
+    def set_color(self, bg: str, fg: str=Colors.BLACK) -> None:
         self.bg=bg
         self.fg=fg if fg else self.fg
 
