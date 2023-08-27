@@ -15,3 +15,10 @@ input_style.set_font(Fonts.ARIAL, 12, FontStyles.ITALIC)
 input_style.set_border(2)
 input_style.set_color(bg=Colors.BLUE_LIGHT, fg=Colors.BLACK)
 input_style.set_area(width=20)
+
+# Label properties
+label_style=Style()
+label_style.set_font(Fonts.ARIAL, 12, FontStyles.UNDERLINE)
+label_style.set_border(2)
+label_style.set_color(bg=Colors.MAROON_LIGHT, fg=Colors.MAROON)
+label_style.set_area(width=20)

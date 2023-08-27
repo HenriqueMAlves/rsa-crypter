@@ -85,5 +85,13 @@ class GenericScreen():
             padx=style.pad_x, 
             pady=style.pad_y
         )
+        label.config(
+            font=style.font,
+            borderwidth=style.border,
+            bg=style.bg,
+            fg=style.fg,
+            width=style.width,
+            height=style.height
+        )
 
         return label
