@@ -10,6 +10,16 @@ class FontStyles:
     ITALIC          =   'italic'
     UNDERLINE       =   'underline'
 
+class TextAlignment:
+    CENTER          =   'center'
+    LEFT            =   'w'
+    RIGHT           =   'e'
+
+class ButtonAlignment:
+    CENTER          =   'n'
+    LEFT            =   'w'
+    RIGHT           =   'e'
+
 class Colors:
     WHITE = '#ffffff'
     WHITE_SMOKE = '#f5f5f5'
@@ -23,8 +33,8 @@ class Colors:
     BLUE_LIGHT = '#add8e6'
     YELLOW = '#ffff00'
     YELLOW_LIGHT = '#ffffe0'
-    ORANGE = '#ffa500'
-    ORANGE_LIGHT = '#ff4500'
+    ORANGE = '#ff4500'
+    ORANGE_LIGHT = '#ff7800'
     PURPLE = '#800080'
     PURPLE_LIGHT = '#9370db'
     PINK = '#ffc0cb'

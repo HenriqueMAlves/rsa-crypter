@@ -70,7 +70,8 @@ class GenericScreen():
             row=row, 
             column=column, 
             padx=style.pad_x, 
-            pady=style.pad_y
+            pady=style.pad_y,
+            stick=style.button_alignmet
         )
         button.config(
             font=style.font,
@@ -97,12 +98,13 @@ class GenericScreen():
             bg=style.bg,
             fg=style.fg,
             width=style.width,
-            height=style.height
+            height=style.height,
+            anchor=style.text_alignment
         )
 
         return label
     
-    def space(self, row: int, column: int) -> tk.Label:
+    def space(self, row: int, column: int, height: int=space_style.height) -> tk.Label:
         '''
             Usado como um limitador do tamanho de cada coluna
             para manter o mesmo espaço mesmo que os componentes 
@@ -120,7 +122,7 @@ class GenericScreen():
             font=space_style.font,
             bg=self.background_color,
             width=space_style.width,
-            height=space_style.height
+            height=height
         )
 
         return space
