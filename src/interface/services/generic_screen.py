@@ -1,3 +1,4 @@
+from ast import List
 import tkinter as tk
 
 from src.interface.services.utils import Colors
@@ -46,6 +47,9 @@ class GenericScreen():
             função padrão de click dos botões
         '''
         print("clicked")
+    
+    def generic_select(event):
+        print(event)
 
     def input(self, row: int, column: int, style: Style=default_style) -> tk.Entry:
         entry=tk.Entry(self.root)
@@ -126,3 +130,9 @@ class GenericScreen():
         )
 
         return space
+    
+    def dropdown(self, row: int, column: int, text: str="Converter", options: List=['1', '2'], command: callable=generic_select, style: Style=default_style) -> tk.Button:
+        selected_option=tk.StringVar(value=text)
+        tk.OptionMenu(self.root, selected_option, *options, command=command).pack()
+
+        return selected_option
