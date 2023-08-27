@@ -1,5 +1,6 @@
 import tkinter as tk
 
+from src.interface.services.utils import Colors
 from src.interface.services.style import Style
 from src.interface.theme import space_style
 
@@ -9,12 +10,14 @@ class GenericScreen():
     height: int=0
     title: str=""
     default_style: Style=Style()
+    background_color: str
 
     def __init__(
             self, 
             width: int=1200, 
             height: int=500,
-            title: str="rsa code / decode"
+            title: str="rsa code / decode",
+            bg: str=Colors.SILVER_LIGHT
             ) -> None:
         self.width=width
         self.height=height
@@ -22,6 +25,8 @@ class GenericScreen():
         self.root=tk.Tk()
         self.root.title(self.title)
         self.root.geometry(f"{self.width}x{self.height}")
+        self.background_color=bg
+        self.root.config(bg=self.background_color)
 
     def run(self) -> None:
         '''
@@ -113,7 +118,7 @@ class GenericScreen():
         )
         space.config(
             font=space_style.font,
-            bg='white',
+            bg=self.background_color,
             width=space_style.width,
             height=space_style.height
         )
