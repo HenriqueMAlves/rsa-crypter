@@ -1,4 +1,4 @@
-from src.interface.services.utils import Colors
+from src.interface.services.utils import Colors, TextAlignment
 
 
 class Style:
@@ -10,10 +10,12 @@ class Style:
     width: int
     height: int
     border: int
+    alignment: str
 
     def __init__(self) -> None:
         self.set_padding()
         self.set_area()
+        self.set_alignment()
         
     def set_padding(self, pad_x: int=10, pad_y: int=10) -> None:
         self.pad_x=pad_x
@@ -32,3 +34,6 @@ class Style:
     
     def set_border(self, width: int) -> None:
         self.border=width
+
+    def set_alignment(self, alignment: str=TextAlignment.LEFT) -> None:
+        self.alignment=alignment

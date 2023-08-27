@@ -10,6 +10,11 @@ class FontStyles:
     ITALIC          =   'italic'
     UNDERLINE       =   'underline'
 
+class TextAlignment:
+    CENTER          =   'center'
+    LEFT            =   'w'
+    RIGHT           =   'e'
+
 class Colors:
     WHITE = '#ffffff'
     WHITE_SMOKE = '#f5f5f5'
