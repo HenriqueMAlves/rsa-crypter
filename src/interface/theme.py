@@ -55,6 +55,7 @@ label_response_style.set_font(Fonts.ARIAL, 12, '')
 label_response_style.set_border(2)
 label_response_style.set_color(bg=Colors.SILVER, fg=Colors.BLACK)
 label_response_style.set_area(width=50, height=7)
+label_response_style.set_column_span(2)
 
 # Space properties
 space_style=Style()
