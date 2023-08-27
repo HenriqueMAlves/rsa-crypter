@@ -1,6 +1,7 @@
 
 from tkinter import Entry
 from src.interface.services.generic_screen import GenericScreen
+from src.interface.theme import button_style
 
 
 class mainScreen:
@@ -17,6 +18,6 @@ class mainScreen:
     def run(self) -> None:
         self.input=self.screen.input(row=0, column=0)
         self.label=self.screen.label(row=2, column=0)
-        self.button=self.screen.button(row=1, column=0, command=self.button_click)
+        self.button=self.screen.button(row=1, column=0, command=self.button_click, style=button_style)
 
         self.screen.run()

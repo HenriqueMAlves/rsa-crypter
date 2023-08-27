@@ -1,0 +1,38 @@
+class Fonts:
+    HELVETICA       =   'Helvetica'
+    ARIAL           =   'Arial'
+    TIMES_NEW_ROMAN =   'Times New Roman'
+    COURIER_NEW     =   'Courier New'
+    VERDANA         =   'Verdana'
+
+class FontStyles:
+    BOLD            =   'bold'
+    ITALIC          =   'italic'
+    UNDERLINE       =   'underline'
+
+class Colors:
+    WHITE           = '#ffffff'
+    BLACK           = '#000000'
+    RED             = '#ff0000'
+    GREEN           = '#00ff00'
+    BLUE            = '#0000ff'
+    YELLOW          = '#ffff00'
+    ORANGE          = '#ffA500'
+    PURPLE          = '#800080'
+    PINK            = '#ffc0cb'
+    GRAY            = '#808080'
+    BROWN           = '#a52a2a'
+    CYAN            = '#00ffff'
+    LIME            = '#00ff00'
+    GOLD            = '#ffd700'
+    SILVER          = '#c0c0c0'
+    NAVY            = '#000080'
+    TEAL            = '#008080'
+    INDIGO          = '#4b0082'
+    MAROON          = '#800000'
+    OLIVE           = '#808000'
+    VIOLET          = '#ee82ee'
+    MAGENTA         = '#ff00ff'
+    CORAL           = '#ff7f50'
+    TURQUOISE       = '#40e0d0'
+    
