@@ -15,6 +15,11 @@ class TextAlignment:
     LEFT            =   'w'
     RIGHT           =   'e'
 
+class ButtonAlignment:
+    CENTER          =   'n'
+    LEFT            =   'w'
+    RIGHT           =   'e'
+
 class Colors:
     WHITE = '#ffffff'
     WHITE_SMOKE = '#f5f5f5'

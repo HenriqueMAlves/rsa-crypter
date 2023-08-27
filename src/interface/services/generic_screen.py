@@ -70,7 +70,8 @@ class GenericScreen():
             row=row, 
             column=column, 
             padx=style.pad_x, 
-            pady=style.pad_y
+            pady=style.pad_y,
+            stick=style.button_alignmet
         )
         button.config(
             font=style.font,
@@ -98,7 +99,7 @@ class GenericScreen():
             fg=style.fg,
             width=style.width,
             height=style.height,
-            anchor=style.alignment
+            anchor=style.text_alignment
         )
 
         return label
