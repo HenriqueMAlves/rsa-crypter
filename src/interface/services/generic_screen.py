@@ -63,7 +63,9 @@ class GenericScreen():
             font=style.font,
             borderwidth=style.border,
             bg=style.bg,
-            fg=style.fg    
+            fg=style.fg,
+            width=style.width,
+            height=style.height
         )
 
         return button

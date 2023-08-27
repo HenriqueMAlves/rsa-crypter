@@ -12,6 +12,7 @@ class Style:
 
     def __init__(self) -> None:
         self.set_padding()
+        self.set_area()
         
     def set_padding(self, pad_x: int=10, pad_y: int=10) -> None:
         self.pad_x=pad_x
@@ -24,7 +25,7 @@ class Style:
     def set_font(self, name: str, size: int, style: str) -> None:
         self.font=(name, size, style)
     
-    def set_area(self, width: int=None, height: int=None) -> None:
+    def set_area(self, width: int=10, height: int=1) -> None:
         self.width=width if width else self.width
         self.height=height if height else self.height
     
