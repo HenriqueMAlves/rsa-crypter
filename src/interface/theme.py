@@ -28,3 +28,10 @@ space_style=Style()
 space_style.set_padding(pad_x=0, pad_y=0)
 space_style.set_font(Fonts.ARIAL, 1, '')
 space_style.set_area(width=200, height=1)
+
+# Dropdown properties
+dropdown_style=Style()
+dropdown_style.set_font(Fonts.ARIAL, 10, FontStyles.BOLD)
+dropdown_style.set_border(2)
+dropdown_style.set_color(bg=Colors.GRAY, fg=Colors.BLACK)
+dropdown_style.set_area(20, 1)
