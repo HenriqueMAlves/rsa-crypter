@@ -94,7 +94,8 @@ class GenericScreen():
             row=row, 
             column=column, 
             padx=style.pad_x, 
-            pady=style.pad_y
+            pady=style.pad_y,
+            columnspan=1
         )
         label.config(
             font=style.font,
