@@ -1,7 +1,7 @@
 from ast import List
 import tkinter as tk
 
-from src.interface.services.utils import Colors
+from src.interface.services.utils import Colors, TextAlignment
 from src.interface.services.style import Style
 from src.interface.theme import space_style
 
@@ -133,6 +133,22 @@ class GenericScreen():
     
     def dropdown(self, row: int, column: int, text: str="Converter", options: List=['1', '2'], command: callable=generic_select, style: Style=default_style) -> tk.Button:
         selected_option=tk.StringVar(value=text)
-        tk.OptionMenu(self.root, selected_option, *options, command=command).pack()
+        dropdown=tk.OptionMenu(self.root, selected_option, *options, command=command)
+        dropdown.grid(
+            padx=style.pad_x, 
+            pady=style.pad_y,
+            row=row, 
+            column=column,
+            sticky=style.button_alignmet
+        )
+        dropdown.configure(
+            font=style.font,
+            borderwidth=style.border,
+            bg=style.bg,
+            fg=style.fg,
+            width=style.width,
+            height=style.height,
+            anchor=style.text_alignment
+        )
 
         return selected_option
