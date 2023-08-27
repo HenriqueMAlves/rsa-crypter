@@ -25,14 +25,14 @@ class MultiplicativeInverse():
         if a == 0:
             return b, 0, 1
         else:
-            gcd, x, y = self.extended_gcd(b % a, a)
+            gcd, x, y=self.extended_gcd(b % a, a)
             return gcd, y - (b // a) * x, x
 
     def multiplicative_inverse(self, a: int, m: int):
         '''
             d * a ≡ 1 mod(m)
         '''
-        gcd, x, y = self.extended_gcd(a, m)
+        gcd, x, y=self.extended_gcd(a, m)
         if gcd != 1:
             raise ValueError("O inverso multiplicativo não existe.")
         else:
