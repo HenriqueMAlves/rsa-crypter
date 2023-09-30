@@ -57,14 +57,16 @@ class GenericScreen():
             row=row,
             column=column,
             padx=style.pad_x,
-            pady=style.pad_y
+            pady=style.pad_y,
+            columnspan=style.column_span,
+            sticky=style.component_alignmet
         )
         entry.config(
             font=style.font,
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
         )
         return entry
 
@@ -75,14 +77,15 @@ class GenericScreen():
             column=column, 
             padx=style.pad_x, 
             pady=style.pad_y,
-            stick=style.button_alignmet
+            stick=style.component_alignmet,
+            columnspan=style.column_span
         )
         button.config(
             font=style.font,
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
             height=style.height
         )
 
@@ -95,14 +98,15 @@ class GenericScreen():
             column=column, 
             padx=style.pad_x, 
             pady=style.pad_y,
-            columnspan=1
+            columnspan=style.column_span,
+            sticky=style.component_alignmet
         )
         label.config(
             font=style.font,
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
             height=style.height,
             anchor=style.text_alignment
         )
@@ -140,14 +144,15 @@ class GenericScreen():
             pady=style.pad_y,
             row=row, 
             column=column,
-            sticky=style.button_alignmet
+            sticky=style.component_alignmet,
+            columnspan=style.column_span
         )
         dropdown.configure(
             font=style.font,
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
             height=style.height,
             anchor=style.text_alignment
         )

@@ -15,7 +15,7 @@ class TextAlignment:
     LEFT            =   'w'
     RIGHT           =   'e'
 
-class ButtonAlignment:
+class ComponentAlignment:
     CENTER          =   'n'
     LEFT            =   'w'
     RIGHT           =   'e'
