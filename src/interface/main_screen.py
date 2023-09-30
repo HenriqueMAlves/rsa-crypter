@@ -6,7 +6,7 @@ from src.interface.theme import input_style, label_style, dropdown_style, title_
 from src.interface.theme import button_convert_style, button_export_style
 
 class mainScreen:
-    screen: GenericScreen=GenericScreen(width=800)
+    screen: GenericScreen=GenericScreen(width=900)
 
     input: Entry
     label: Label
@@ -60,4 +60,9 @@ class mainScreen:
         self.screen.label(row, column, text, label_response_style)
         row+=1
 
+        row=0
+        column+=1
+        self.screen.space(row, column)
+        row+=1
+        
         self.screen.run()
