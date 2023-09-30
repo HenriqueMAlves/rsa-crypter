@@ -66,7 +66,7 @@ class GenericScreen():
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
         )
         return entry
 
@@ -85,7 +85,7 @@ class GenericScreen():
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
             height=style.height
         )
 
@@ -106,7 +106,7 @@ class GenericScreen():
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
             height=style.height,
             anchor=style.text_alignment
         )
@@ -152,7 +152,7 @@ class GenericScreen():
             borderwidth=style.border,
             bg=style.bg,
             fg=style.fg,
-            width=style.width,
+            width=style.width*style.column_span,
             height=style.height,
             anchor=style.text_alignment
         )
