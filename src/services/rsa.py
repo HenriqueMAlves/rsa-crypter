@@ -37,17 +37,17 @@ class RSA():
         
         ascii_message=[ord(char) for char in message]
         
-        encripted_message=[]
+        encrypted_message=[]
         for character in ascii_message:
-            encripted_message.append((character ** public_keys[self.__E]) % public_keys[self.__N])
+            encrypted_message.append((character ** public_keys[self.__E]) % public_keys[self.__N])
     
-        return encripted_message
+        return encrypted_message
 
-    def decode(self, encripted_message: List, private_keys: List[int]=None, public_keys: List[int]=None) -> str:
+    def decode(self, encrypted_message: List, private_keys: List[int]=None, public_keys: List[int]=None) -> str:
         (public_keys, private_keys)=self.verify_keys(public_keys, private_keys)
 
         ascii_message=[]
-        for character in encripted_message:
+        for character in encrypted_message:
             ascii_message.append((character ** private_keys[self.__D]) % public_keys[self.__N])
 
         decoded_message=''.join([chr(value) for value in ascii_message])
