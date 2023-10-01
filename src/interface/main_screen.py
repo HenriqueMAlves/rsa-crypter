@@ -1,5 +1,6 @@
 
 from tkinter import Button, Entry, Label
+from src.services.rsa import RSA
 from src.interface.services.utils import FontStyles
 from src.interface.services.generic_screen import GenericScreen
 from src.interface.theme import input_style, label_style, dropdown_style, title_style, label_response_style
@@ -25,11 +26,39 @@ class mainScreen:
     label_response: Label
     mode: str = ''
 
+    rsa_service: RSA
+
+    def encrypt(self) -> None:
+        string: str = self.input_string.get()
+        key_1: int = self.input_key_1.get()
+        key_2: int = self.input_key_2.get()
+
+        if (not string) or (not key_1) or (not key_2):
+            # raise Exception(f"[Erro] - Digite um valor valido em \
+            # {
+            #    'Frase a ser criptografada ' if not string else ''
+            # }{
+            #     'Chave privada 1' if not key_1 else ''
+            # }{
+            #     'Chave privada 2' if not key_2 else ''
+            # }")
+            pass
+
+        self.rsa_service = RSA(int(key_1), int(key_2))
+        (public_keys, private_keys) = self.rsa_service.generate_keys(int(key_1), int(key_2))
+        encrypted_message = self.rsa_service.code(string)
+
+        self.label_response.config(text=f"public keys = {public_keys}\nprivate key = [{private_keys[2]}] \nmessage: \n{encrypted_message}")
+
     def convert(self) -> None:
-        if self.mode == option.decrypt:
-            pass
-        else:
-            pass
+        try: 
+            if self.mode == option.decrypt:
+                pass
+            else:
+                self.encrypt()
+                
+        except Exception as err:
+            print(err)
     
     def select_mode(self, event):
         self.mode = event
