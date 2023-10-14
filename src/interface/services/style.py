@@ -1,4 +1,4 @@
-from src.interface.services.utils import ComponentAlignment, Colors, TextAlignment
+from src.interface.services.utils import ComponentAlignment, Colors, TextAlignment, TextJustify
 
 
 class Style:
@@ -11,6 +11,7 @@ class Style:
     height: int
     border: int
     text_alignment: str
+    text_justify: str
     component_alignmet: str
     column_span: int
 
@@ -18,6 +19,7 @@ class Style:
         self.set_padding()
         self.set_area()
         self.set_text_alignment()
+        self.set_text_justify()
         self.set_component_alignmet()
         self.set_column_span()
         
@@ -41,6 +43,9 @@ class Style:
 
     def set_text_alignment(self, alignment: str=TextAlignment.LEFT) -> None:
         self.text_alignment=alignment
+
+    def set_text_justify(self, justify: str=TextJustify.LEFT) -> None:
+        self.text_justify=justify
 
     def set_component_alignmet(self, alignment: str=ComponentAlignment.CENTER) -> None:
         self.component_alignmet=alignment
