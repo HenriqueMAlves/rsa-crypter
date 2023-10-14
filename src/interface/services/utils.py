@@ -14,6 +14,13 @@ class TextAlignment:
     CENTER          =   'center'
     LEFT            =   'w'
     RIGHT           =   'e'
+    TOP             =   'n'
+    BOTTON          =   's'
+
+class TextJustify:
+    CENTER          =   'center'
+    LEFT            =   'left'
+    RIGHT           =   'right'
 
 class ComponentAlignment:
     CENTER          =   'n'

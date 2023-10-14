@@ -108,7 +108,9 @@ class GenericScreen():
             fg=style.fg,
             width=style.width*style.column_span,
             height=style.height,
-            anchor=style.text_alignment
+            anchor=style.text_alignment,
+            justify=style.text_justify,
+            wraplength=850 # Tamanho total da janela
         )
 
         return label
