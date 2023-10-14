@@ -1,6 +1,6 @@
 from typing import List
+from src.services.base64 import Base64Convertion
 from src.services.math_utils import Prime, MultiplicativeInverse
-
 
 
 class RSA():
@@ -13,6 +13,7 @@ class RSA():
     __D: int=2
     prime_service: Prime=Prime()
     mi_service: MultiplicativeInverse=MultiplicativeInverse()
+    base64_service: Base64Convertion=Base64Convertion()
     private_keys: List[int]=[]
     public_keys: List[int]=[]
 
@@ -40,11 +41,13 @@ class RSA():
         encrypted_message=[]
         for character in ascii_message:
             encrypted_message.append((character ** public_keys[self.__E]) % public_keys[self.__N])
-    
-        return encrypted_message
 
-    def decode(self, encrypted_message: List, private_keys: List[int]=None, public_keys: List[int]=None) -> str:
+        return self.base64_service.encode(encrypted_message)
+
+    def decode(self, encrypted_base64_message: str, private_keys: List[int]=None, public_keys: List[int]=None) -> str:
         (public_keys, private_keys)=self.verify_keys(public_keys, private_keys)
+
+        encrypted_message=self.base64_service.decode(encrypted_base64_message)
 
         ascii_message=[]
         for character in encrypted_message:
