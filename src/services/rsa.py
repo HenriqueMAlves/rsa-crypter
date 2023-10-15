@@ -17,7 +17,7 @@ class RSA():
     private_keys: List[int]=[]
     public_keys: List[int]=[]
 
-    def __init__(self, p, q) -> None:
+    def __init__(self, p=7, q=13) -> None:
         (self.public_keys, self.private_keys)=self.generate_keys(p, q)
 
     def generate_keys(self, p, q) -> tuple:
