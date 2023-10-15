@@ -86,7 +86,8 @@ class GenericScreen():
             bg=style.bg,
             fg=style.fg,
             width=style.width*style.column_span,
-            height=style.height
+            height=style.height,
+            anchor=style.text_alignment
         )
 
         return button
