@@ -1,10 +1,10 @@
 
-from tkinter import Button, Entry, Label
+from tkinter import Button, Entry, Label, Text
 from src.services.rsa import RSA
 from src.interface.services.generic_screen import GenericScreen
-from src.interface.theme import input_style, label_style, dropdown_style, title_style, label_response_style
+from src.interface.theme import input_style, label_style, dropdown_style, title_style, text_response_style
 from src.interface.theme import button_convert_style, button_export_style, key_input_style, key_2_input_style
-from src.interface.theme import key_2_label_style
+from src.interface.theme import key_2_label_style, button_copy_style
 
 class option:
     encrypt: str="Criptografar"
@@ -25,7 +25,7 @@ class mainScreen:
     input_key_1: Entry
     label_key_2: Label
     input_key_2: Entry
-    label_response: Label
+    text_response: Text
     mode: str=''
 
     rsa_service: RSA
@@ -42,7 +42,7 @@ class mainScreen:
         (public_keys, private_keys)=self.rsa_service.generate_keys(int(key_1), int(key_2))
         encrypted_message=self.rsa_service.code(string)
 
-        self.label_response.config(text=f"public keys={public_keys}\nprivate key=[{private_keys[2]}] \nmessage: \n{encrypted_message}")
+        self.text_response.insert("1.0", f"public keys={public_keys}\nprivate key=[{private_keys[2]}] \nmessage: \n{encrypted_message}\n")
 
     def decrypt(self) -> None:
         string: str=self.input_string.get()
@@ -55,7 +55,7 @@ class mainScreen:
         self.rsa_service=RSA()
         decrypt_message=self.rsa_service.decode(string, [0, 0, int(key_2)], [int  (key_1), 0])
 
-        self.label_response.config(text=f"message: \n{decrypt_message}")
+        self.text_response.insert("1.0", f"message: \n{decrypt_message}\n")
 
     def convert(self) -> None:
         try: 
@@ -78,7 +78,10 @@ class mainScreen:
             self.label_key_1.config(text="Key 1")
             self.label_key_2.config(text="Key 2")
 
-    def export(self):
+    def button_clean(self) -> None:
+        self.text_response.delete("1.0", "end")
+    
+    def export(self) -> None:
         pass
 
     def run(self) -> None:
@@ -126,7 +129,7 @@ class mainScreen:
         text="Criptografar"
         options=[option.encrypt, option.decrypt]
         self.screen.dropdown(row, column, text, options, self.select_mode ,dropdown_style)
-        text="exportar"
+        text="Exportar"
         self.button=self.screen.button(row, column, text, self.export, button_export_style)
         row+=1
         self.screen.space(row, column, height=10)
@@ -135,7 +138,9 @@ class mainScreen:
         #####
         # Resultado
         text=""
-        self.label_response=self.screen.label(row, column, text, label_response_style)
+        self.text_response=self.screen.text(row, column, text_response_style)
+        text="Limpar"
+        self.screen.button(row, column+1, text, self.button_clean, button_copy_style)
         row+=1
 
         ###########################################################

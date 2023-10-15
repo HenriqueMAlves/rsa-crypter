@@ -77,13 +77,22 @@ button_export_style.set_component_alignmet(ComponentAlignment.RIGHT)
 
 ########################
 # Resultado
-label_response_style=Style()
-label_response_style.set_font(Fonts.ARIAL, 12, '')
-label_response_style.set_border(2)
-label_response_style.set_color(bg=Colors.SILVER, fg=Colors.BLACK)
-label_response_style.set_text_alignment(TextAlignment.TOP + TextAlignment.LEFT)
-label_response_style.set_area(width=48, height=7)
-label_response_style.set_column_span(2)
+text_response_style=Style()
+text_response_style.set_font(Fonts.ARIAL, 12, '')
+text_response_style.set_border(2)
+text_response_style.set_color(bg=Colors.SILVER, fg=Colors.BLACK)
+text_response_style.set_text_alignment(TextAlignment.TOP + TextAlignment.LEFT)
+text_response_style.set_area(width=48, height=7)
+text_response_style.set_column_span(2)
+
+button_copy_style=Style()
+button_copy_style.set_padding(pad_x=10, pad_y=10)
+button_copy_style.set_font(Fonts.ARIAL, 10, FontStyles.BOLD)
+button_copy_style.set_border(2)
+button_copy_style.set_color(bg=Colors.GRAY, fg=Colors.BLACK)
+button_copy_style.set_area(8, 1)
+button_copy_style.set_component_alignmet(ComponentAlignment.CENTER + ComponentAlignment.RIGHT)
+button_copy_style.set_text_alignment(TextAlignment.CENTER)
 
 # Space properties
 space_style=Style()

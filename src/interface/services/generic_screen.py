@@ -48,7 +48,7 @@ class GenericScreen():
         '''
         print("clicked")
     
-    def generic_select(event):
+    def generic_select(event) -> None:
         print(event)
 
     def input(self, row: int, column: int, style: Style=default_style) -> tk.Entry:
@@ -86,7 +86,8 @@ class GenericScreen():
             bg=style.bg,
             fg=style.fg,
             width=style.width*style.column_span,
-            height=style.height
+            height=style.height,
+            anchor=style.text_alignment
         )
 
         return button
@@ -160,3 +161,24 @@ class GenericScreen():
         )
 
         return selected_option
+
+    def text(self, row: int, column: int, style: Style=default_style) -> tk.Text:
+        text=tk.Text(self.root)
+        text.grid(
+            row=row, 
+            column=column, 
+            padx=style.pad_x, 
+            pady=style.pad_y,
+            columnspan=style.column_span,
+            sticky=style.component_alignmet
+        )
+        text.config(
+            font=style.font,
+            borderwidth=style.border,
+            bg=style.bg,
+            fg=style.fg,
+            width=style.width*style.column_span,
+            height=style.height,
+        )
+        
+        return text
