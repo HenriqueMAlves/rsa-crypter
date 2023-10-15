@@ -4,7 +4,7 @@ from src.services.rsa import RSA
 from src.interface.services.generic_screen import GenericScreen
 from src.interface.theme import input_style, label_style, dropdown_style, title_style, text_response_style
 from src.interface.theme import button_convert_style, button_export_style, key_input_style, key_2_input_style
-from src.interface.theme import key_2_label_style
+from src.interface.theme import key_2_label_style, button_copy_style
 
 class option:
     encrypt: str="Criptografar"
@@ -78,7 +78,10 @@ class mainScreen:
             self.label_key_1.config(text="Key 1")
             self.label_key_2.config(text="Key 2")
 
-    def export(self):
+    def button_clean(self) -> None:
+        self.text_response.delete("1.0", "end")
+    
+    def export(self) -> None:
         pass
 
     def run(self) -> None:
@@ -136,6 +139,8 @@ class mainScreen:
         # Resultado
         text=""
         self.text_response=self.screen.text(row, column, text_response_style)
+        text="Limpar"
+        self.screen.button(row, column+1, text, self.button_clean, button_copy_style)
         row+=1
 
         ###########################################################
