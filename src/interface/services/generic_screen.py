@@ -162,8 +162,8 @@ class GenericScreen():
 
         return selected_option
 
-    def text(self, row: int, column: int, text: str="label", style: Style=default_style) -> tk.Label:
-        text=tk.Label(self.root, text=text)
+    def text(self, row: int, column: int, style: Style=default_style) -> tk.Text:
+        text=tk.Text(self.root)
         text.grid(
             row=row, 
             column=column, 
@@ -179,9 +179,6 @@ class GenericScreen():
             fg=style.fg,
             width=style.width*style.column_span,
             height=style.height,
-            anchor=style.text_alignment,
-            justify=style.text_justify,
-            wraplength=850 # Tamanho total da janela
         )
-
+        
         return text
