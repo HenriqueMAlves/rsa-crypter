@@ -77,13 +77,13 @@ button_export_style.set_component_alignmet(ComponentAlignment.RIGHT)
 
 ########################
 # Resultado
-label_response_style=Style()
-label_response_style.set_font(Fonts.ARIAL, 12, '')
-label_response_style.set_border(2)
-label_response_style.set_color(bg=Colors.SILVER, fg=Colors.BLACK)
-label_response_style.set_text_alignment(TextAlignment.TOP + TextAlignment.LEFT)
-label_response_style.set_area(width=48, height=7)
-label_response_style.set_column_span(2)
+text_response_style=Style()
+text_response_style.set_font(Fonts.ARIAL, 12, '')
+text_response_style.set_border(2)
+text_response_style.set_color(bg=Colors.SILVER, fg=Colors.BLACK)
+text_response_style.set_text_alignment(TextAlignment.TOP + TextAlignment.LEFT)
+text_response_style.set_area(width=48, height=7)
+text_response_style.set_column_span(2)
 
 # Space properties
 space_style=Style()

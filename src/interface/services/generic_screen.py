@@ -48,7 +48,7 @@ class GenericScreen():
         '''
         print("clicked")
     
-    def generic_select(event):
+    def generic_select(event) -> None:
         print(event)
 
     def input(self, row: int, column: int, style: Style=default_style) -> tk.Entry:
@@ -160,3 +160,27 @@ class GenericScreen():
         )
 
         return selected_option
+
+    def text(self, row: int, column: int, text: str="label", style: Style=default_style) -> tk.Label:
+        text=tk.Label(self.root, text=text)
+        text.grid(
+            row=row, 
+            column=column, 
+            padx=style.pad_x, 
+            pady=style.pad_y,
+            columnspan=style.column_span,
+            sticky=style.component_alignmet
+        )
+        text.config(
+            font=style.font,
+            borderwidth=style.border,
+            bg=style.bg,
+            fg=style.fg,
+            width=style.width*style.column_span,
+            height=style.height,
+            anchor=style.text_alignment,
+            justify=style.text_justify,
+            wraplength=850 # Tamanho total da janela
+        )
+
+        return text

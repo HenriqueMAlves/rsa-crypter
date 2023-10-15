@@ -2,7 +2,7 @@
 from tkinter import Button, Entry, Label
 from src.services.rsa import RSA
 from src.interface.services.generic_screen import GenericScreen
-from src.interface.theme import input_style, label_style, dropdown_style, title_style, label_response_style
+from src.interface.theme import input_style, label_style, dropdown_style, title_style, text_response_style
 from src.interface.theme import button_convert_style, button_export_style, key_input_style, key_2_input_style
 from src.interface.theme import key_2_label_style
 
@@ -135,7 +135,7 @@ class mainScreen:
         #####
         # Resultado
         text=""
-        self.label_response=self.screen.label(row, column, text, label_response_style)
+        self.label_response=self.screen.text(row, column, text, text_response_style)
         row+=1
 
         ###########################################################
