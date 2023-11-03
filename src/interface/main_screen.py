@@ -32,6 +32,8 @@ class mainScreen:
     rsa_service: RSA
     pdf_service: Pdf=Pdf()
 
+    text_export: str
+
     def encrypt(self) -> None:
         string: str=self.input_string.get()
         key_1: int=self.input_key_1.get()
@@ -44,6 +46,7 @@ class mainScreen:
         (public_keys, private_keys)=self.rsa_service.generate_keys(int(key_1), int(key_2))
         encrypted_message=self.rsa_service.code(string)
 
+        self.text_export=encrypted_message
         self.text_response.insert("1.0",
                                   f"*********\n" 
                                   f"public keys={public_keys}\n" +
@@ -61,6 +64,7 @@ class mainScreen:
         self.rsa_service=RSA()
         decrypt_message=self.rsa_service.decode(string, [0, 0, int(key_2)], [int  (key_1), 0])
 
+        self.text_export=decrypt_message
         self.text_response.insert("1.0", 
                                   f"*********\n" +
                                   f"message: \n{decrypt_message}\n")
@@ -90,8 +94,7 @@ class mainScreen:
         self.text_response.delete("1.0", "end")
     
     def export(self) -> None:
-        text=self.text_response.get("1.0", "end-1c")
-        self.pdf_service.create(text)
+        self.pdf_service.create(self.text_export)
 
     def run(self) -> None:
         ###########################################################

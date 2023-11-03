@@ -7,7 +7,7 @@ class Base64Convertion():
 
     def encode(self, data: []) -> str:
         try:
-            data_list_str = list(map(str, data))
+            data_list_str=list(map(str, data))
             data_str=','.join(data_list_str).encode('utf-8')
 
             return base64.b64encode(data_str).decode('utf-8')
