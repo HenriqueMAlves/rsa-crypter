@@ -106,7 +106,7 @@ class mainScreen:
         # Título
         self.screen.space(row, column)
         row+=1
-        text="TITLE"
+        text="Gáe Assail"
         self.screen.label(row, column, text, title_style)
         row+=1
         self.screen.space(row, column, height=10)
