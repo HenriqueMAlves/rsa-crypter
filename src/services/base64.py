@@ -7,29 +7,18 @@ class Base64Convertion():
 
     def encode(self, data: []) -> str:
         try:
-            formated_data=[]
-            for num in data:
-                hexadecimal=hex(num)[2:]
-                hexadecimal=hexadecimal.zfill(6)
-                formated_data.append(int(hexadecimal[:2], 16))
-                formated_data.append(int(hexadecimal[2:4], 16))
-                formated_data.append(int(hexadecimal[4:6], 16))
-                
-            return base64.b64encode(bytes(formated_data)).decode('utf-8')
+            data_list_str = list(map(str, data))
+            data_str = ','.join(data_list_str).encode('utf-8')
+
+            return base64.b64encode(data_str).decode('utf-8')
         except Exception as e:
             print(e)
 
     def decode(self, data: str) -> list:
         try:
-            data_list=list(base64.b64decode(data))
+            data_str=base64.b64decode(data.encode('utf-8')).decode('utf-8')
+            data_list_str=data_str.split(',')
 
-            formated_data=[]
-            for index in range(0, len(data_list), 3):
-                hex_data=f'{hex(data_list[index])[2:]}' + \
-                         f'{hex(data_list[index+1])[2:]}' + \
-                         f'{hex(data_list[index+2])[2:]}'
-                formated_data.append(int(hex_data, 16))
-
-            return formated_data
+            return list(map(int, data_list_str))
         except Exception as e:
             print(e)
