@@ -1,5 +1,6 @@
 
 from tkinter import Button, Entry, Label, Text
+from src.services.export import Pdf
 from src.services.rsa import RSA
 from src.interface.services.generic_screen import GenericScreen
 from src.interface.theme import input_style, label_style, dropdown_style, title_style, text_response_style
@@ -29,6 +30,7 @@ class mainScreen:
     mode: str=''
 
     rsa_service: RSA
+    pdf_service: Pdf=Pdf()
 
     def encrypt(self) -> None:
         string: str=self.input_string.get()
@@ -88,7 +90,8 @@ class mainScreen:
         self.text_response.delete("1.0", "end")
     
     def export(self) -> None:
-        pass
+        text=self.text_response.get("1.0", "end-1c")
+        self.pdf_service.create(text)
 
     def run(self) -> None:
         ###########################################################

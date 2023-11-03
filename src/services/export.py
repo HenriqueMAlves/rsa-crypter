@@ -15,7 +15,7 @@ class Pdf:
         suffix="".join(random.choice("0123456789") for _ in range(4))
         return prefix + suffix + ".pdf"
 
-    def create(self, text):
+    def create(self, text) -> None:
         pdf=FPDF()
 
         pdf.set_left_margin(self.MARGIN)
